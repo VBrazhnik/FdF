@@ -31,7 +31,7 @@ int			mouse_press(int button, int x, int y, void *param)
 	fdf = (t_fdf *)param;
 	if (button == MOUSE_SCROLL_UP || button == MOUSE_SCROLL_DOWN)
 		zoom(button, fdf);
-	else
+	else if (button == MOUSE_LEFT_BUTTON)
 		fdf->mouse->is_pressed = true;
 	return (0);
 }
