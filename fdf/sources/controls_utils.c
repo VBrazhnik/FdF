@@ -61,9 +61,9 @@ void	move(int key, t_fdf *fdf)
 void	rotate(int key, t_fdf *fdf)
 {
 	if (key == NUM_PAD_2 || key == MAIN_PAD_2)
-		fdf->camera->alpha -= 0.05;
-	else if (key == NUM_PAD_8 || key == MAIN_PAD_8)
 		fdf->camera->alpha += 0.05;
+	else if (key == NUM_PAD_8 || key == MAIN_PAD_8)
+		fdf->camera->alpha -= 0.05;
 	else if (key == NUM_PAD_4 || key == MAIN_PAD_4)
 		fdf->camera->beta -= 0.05;
 	else if (key == NUM_PAD_6 || key == MAIN_PAD_6)

@@ -71,7 +71,7 @@ static void	iso(int *x, int *y, int z)
 	previous_x = *x;
 	previous_y = *y;
 	*x = (previous_x - previous_y) * cos(0.523599);
-	*y = z + (previous_x + previous_y) * sin(0.523599);
+	*y = -z + (previous_x + previous_y) * sin(0.523599);
 }
 
 /*
@@ -89,7 +89,7 @@ t_point		project(t_point p, t_fdf *fdf)
 	rotate_y(&p.x, &p.z, fdf->camera->beta);
 	rotate_z(&p.x, &p.y, fdf->camera->gamma);
 	if (fdf->camera->projection == ISO)
-		iso(&p.x, &p.y, -p.z);
+		iso(&p.x, &p.y, p.z);
 	p.x += (WIDTH - MENU_WIDTH) / 2 + fdf->camera->x_offset + MENU_WIDTH;
 	p.y += (HEIGHT + fdf->map->height * fdf->camera->zoom) / 2
 												+ fdf->camera->y_offset;
