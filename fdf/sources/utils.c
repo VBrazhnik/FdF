@@ -68,8 +68,10 @@ static t_bool	ft_has_prefix(const char *str, int base)
 t_bool			ft_isnumber(char *str, int base)
 {
 	size_t		i;
+	size_t		digits;
 
 	i = 0;
+	digits = 0;
 	while (ft_isspace(str[i]))
 		i++;
 	if (base != 10 && !ft_has_prefix(&str[i], base))
@@ -81,8 +83,11 @@ t_bool			ft_isnumber(char *str, int base)
 	else if (base == 10 && (str[i] == '-' || str[i] == '+'))
 		i++;
 	while (ft_isdigit_base(str[i], base) >= 0)
+	{
 		i++;
-	return ((!str[i]) ? true : false);
+		digits++;
+	}
+	return ((!str[i] && digits) ? true : false);
 }
 
 /*
