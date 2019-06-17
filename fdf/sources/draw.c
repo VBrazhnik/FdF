@@ -31,7 +31,7 @@ static void	put_pixel(t_fdf *fdf, int x, int y, int color)
 {
 	int		i;
 
-	if (x > MENU_WIDTH && x < WIDTH && y > 0 && y < HEIGHT)
+	if (x >= MENU_WIDTH && x < WIDTH && y >= 0 && y < HEIGHT)
 	{
 		i = (x * fdf->bits_per_pixel / 8) + (y * fdf->size_line);
 		fdf->data_addr[i] = color;

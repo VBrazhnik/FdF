@@ -29,7 +29,6 @@ int		close(void *param)
 {
 	(void)param;
 	exit(0);
-	return (0);
 }
 
 /*
